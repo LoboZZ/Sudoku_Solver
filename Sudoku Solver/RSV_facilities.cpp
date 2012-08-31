@@ -82,9 +82,9 @@ void cin_throw()
 //cases
 //---------------------------------------------------------------------------------
 
-//Cases cases; //declaration of object cases of class Cases
+Cases_rsv cases; //declaration of object cases of class Cases
 
-/*
+
 string Cases_rsv::all_up(string word)
 {
 	string f_word;
@@ -133,7 +133,7 @@ string Cases_rsv::first_up(string word)
 
     return f_word;
 }
-*/
+
 
 //keep_window_open()
 //---------------------------------------------------------------------------------

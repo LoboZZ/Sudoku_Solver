@@ -25,14 +25,18 @@ void cin_throw();
 
 //cases
 //---------------------------------------------------------------------------------
-/*class Cases_rsv
+
+#ifndef _CASES
+#define _CASES
+
+class Cases_rsv
 {
 public:
 	string all_up(string);
 	string all_low(string);
 	string first_up(string);
-}cases;*/
-
+};
+#endif _CASES
 
 
 //keep_window_open()
