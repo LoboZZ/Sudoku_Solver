@@ -1,6 +1,7 @@
-﻿  RSV_facilities.cpp
-  main.cpp
+﻿  main.cpp
+  Generating Code...
+  Compiling...
   grid.cpp
   Generating Code...
-  LINK : C:\Users\Cub_ZZ\Documents\GitHub\Sudoku_Solver\Debug\Sudoku Solver.exe not found or not built by the last incremental link; performing full link
-  Sudoku Solver.vcxproj -> C:\Users\Cub_ZZ\Documents\GitHub\Sudoku_Solver\Debug\Sudoku Solver.exe
+  LINK : C:\Users\Capt. Enrique\Desktop\Sudoku Solver\Sudoku_Solver\Debug\Sudoku Solver.exe not found or not built by the last incremental link; performing full link
+  Sudoku Solver.vcxproj -> C:\Users\Capt. Enrique\Desktop\Sudoku Solver\Sudoku_Solver\Debug\Sudoku Solver.exe

@@ -60,11 +60,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="graph.cpp" />
     <ClCompile Include="grid.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="RSV_facilities.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="graph.h" />
     <ClInclude Include="grid.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="RSV_facilities.h" />
