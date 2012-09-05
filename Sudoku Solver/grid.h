@@ -32,20 +32,22 @@ class Space
 public:
 	class Invalid{};
 
-	Space(bool, int); //if true asks for value and sets it to original, if false calls other constructor
-	Space();
+	Space(bool, int, Coordinate); //if true asks for value and sets it to original, if false calls other constructor
+	Space(Coordinate);
 
   //Access functions___________________________________
   //non-modifying functions	
 	int value() const;
 	bool original() const;
 	bool found_val() const;
+	bool find_poss_val(int) const;
 
 
   //modifying functions
-	int set_value();
-	bool set_orig();
-	int set_poss_val();
+	bool set_value(int);
+	
+	bool set_poss_val(int);
+	bool delete_poss_val(int);
 
 
 private:
@@ -59,7 +61,6 @@ private:
 	
 //functions	
 	bool allow_modif();
-	Coordinate get_coo();
 };
 
 #endif SPACE
@@ -68,3 +69,15 @@ private:
 //class Grid --- full grid
 //will store Spaces in a two dimensional vector array (vector of vectors)
 //contains all function to read and modify Spaces in the grid
+
+#ifndef GRID
+#define GRID
+
+class Grid
+{
+
+
+
+};
+
+#endif GRID
