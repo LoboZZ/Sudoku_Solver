@@ -1,3 +1,6 @@
-﻿  main.cpp
+﻿  grid.cpp
+c:\users\capt. enrique\desktop\sudoku solver\sudoku_solver\sudoku solver\grid.cpp(57): warning C4018: '<' : signed/unsigned mismatch
+c:\users\capt. enrique\desktop\sudoku solver\sudoku_solver\sudoku solver\grid.cpp(88): warning C4018: '<' : signed/unsigned mismatch
+c:\users\capt. enrique\desktop\sudoku solver\sudoku_solver\sudoku solver\grid.cpp(103): warning C4018: '<' : signed/unsigned mismatch
   LINK : C:\Users\Capt. Enrique\Desktop\Sudoku Solver\Sudoku_Solver\Debug\Sudoku Solver.exe not found or not built by the last incremental link; performing full link
   Sudoku Solver.vcxproj -> C:\Users\Capt. Enrique\Desktop\Sudoku Solver\Sudoku_Solver\Debug\Sudoku Solver.exe

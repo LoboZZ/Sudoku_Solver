@@ -34,6 +34,7 @@ public:
 
 	Space(bool, int, Coordinate); //if true asks for value and sets it to original, if false calls other constructor
 	Space(Coordinate);
+	
 
   //Access functions___________________________________
   //non-modifying functions	
@@ -75,9 +76,68 @@ private:
 
 class Grid
 {
+public:
+
+	struct Coo_and_val
+	{
+		Coo_and_val(int a, Coordinate b)
+			:coo(b), val(a){}
+		Coo_and_val()
+			:coo(-1,-1), val(-1){}
+		
+		friend istream& operator>>(istream& is, Coo_and_val& cov);
+		Coo_and_val& operator=(Coo_and_val& right)
+		{
+			coo=right.coo;
+			val=right.val;
+			return *this;
+		}
+
+		Coordinate coo;
+		int val;
+	};
+	
+	class Error{}; //for exceptions
+	
+	Grid();
+
+//Access functions___________________________________
+  //non-modifying functions	
+	const vector<vector<Space>>& grid() const;
 
 
+  //modifying functions
+	bool set_original();
+	bool solve();
+	
+
+
+private:
+//Data_______________________________________________
+    vector<vector<Space>>gd;  //9x9 two dimensional vector
+    bool original;
+	bool solved;
+	bool unsolvable; 
+
+//functions___________________________________________	
+//non-modifying
+
+
+//modifying
+	
+
+	//HELPER______________________________________________
+	static const int DONE=-5;
+	static const int FAIL=-7;
+public:
+    Coo_and_val get_entry();
+	Coo_and_val get_entry(bool);
 
 };
 
 #endif GRID
+
+
+
+
+
