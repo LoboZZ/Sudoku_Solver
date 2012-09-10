@@ -10,7 +10,7 @@ Space::Space(bool ov, int val, Coordinate a)
 {
 	try{
 	if (!ov) throw Invalid();
-	if (val<0||val>9) throw Invalid();
+	if (val<1||val>9) throw Invalid();
 	if (a.x>8||a.x<0||a.y>8||a.y<0) throw Invalid();
 	
 	v=val;
@@ -153,21 +153,64 @@ Space::Space(Coordinate a)
 
 
 	//modifying
+	bool Grid::set_original()
+	{
+		
+        bool first_time=true;
+		while (true)
+		{
+			vector<Space>or_sps;
+			
+			Coo_and_val cv;
+			cv=get_entry(first_time);
+			first_time=false;
+			
+			string s;
+			if (cv.val==FAIL) 
+				{
+					cin.getline(s.c_str(), numberic_limits<streamsize>::max());  //<<<<<<<<<debug!!!!
+					continue;
+			    }
+			else if (cv.val==DONE) 
+				{
+					fill_grid(or_sps);
+					original=true;
+					return true;
+			    }
+			else if (cv.val==-1) continue;
+			else 
+			{
+				Space temp(true, cv.val, cv.coo);
+				or_sps.push_back(temp);
+			}
+	    }
 
+	  sys_error("bool Grid::set_original()", "exited loop - should not happen!");
+	}
 
+	
 //private___________________________________________________________________
 	//non-modifying
 
 
 	//modifying
+	void Grid::fill_grid(vector<Space>v)
+	{
+		for (int a=0; a<9; a++)
+		{
+			for (int b=0; b<9; b++)
+			{  /////////////////////<<<<<<<<------ finish
+			}
+		}
+	}
 
 
 //HELPER___________________________________________________________________
 	
 	Grid::Coo_and_val Grid::get_entry(const bool a)
 	{
-		if (a==false) sys_error("Grid::Coo_and_val Grid::get_entry(bool)", "argument passed is not true");
-		else if (a==true) 
+		
+		if (a==true) 
 		{
 			cout<<"\n\nTo fill in the original values in the puzzle enter the coordinate followed by \nthe value. For instance: \n> (1,4) 8\n"
 				<<"\nAfter you have entered all the original values type 'done' to solve the puzzle.\n\n";
@@ -223,7 +266,7 @@ Space::Space(Coordinate a)
 		{
 			if (!(is>>coo1>>comm>>coo2>>brk2>>val)) {debug<<"\nCoo_and_val input failure"; throw Error();}
 			if (comm!=','||brk2!=')') {debug<<"\nCoo_and_val input -> syntax error"; throw Error();}
-			if (coo1<1||coo1>9||coo2<1||coo2>9) {debug<<"\nCoo_and_val input -> out of range coordinate"; throw Error();}
+			if (coo1<0||coo1>8||coo2<0||coo2>8) {debug<<"\nCoo_and_val input -> out of range coordinate"; throw Error();}
 			if (val<1||val>9) {debug<<"\nCoo_and_val input -> val not 1-9 range"; throw Error();}
 		}
 		else {debug<<"\nCoo_and_val input unknown error"; throw Error();}

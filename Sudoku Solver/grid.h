@@ -119,17 +119,22 @@ private:
 	bool solved;
 	bool unsolvable; 
 
+	
+
 //functions___________________________________________	
 //non-modifying
+	bool already_in(vector<Space>, Coordinate);
 
 
 //modifying
+	void fill_grid(vector<Space>);
 	
+	Space& access_by_coo(Coordinate);
 
 	//HELPER______________________________________________
 	static const int DONE=-5;
 	static const int FAIL=-7;
-public:
+
     Coo_and_val get_entry();
 	Coo_and_val get_entry(bool);
 
